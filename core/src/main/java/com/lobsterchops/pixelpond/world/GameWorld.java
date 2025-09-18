@@ -35,7 +35,6 @@ public class GameWorld {
             gameCamera.followPlayer(player, deltaTime);
         }
 
-        // TODO: Update other game components
         // spawner.update(deltaTime);
         // collisionSystem.checkCollisions();
     }
@@ -51,7 +50,6 @@ public class GameWorld {
             player.render(batch);
         }
 
-        // TODO: Render other fish
         // for (Fish fish : allFish) {
         //     fish.render(batch);
         // }
