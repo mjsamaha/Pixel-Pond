@@ -31,6 +31,8 @@ public class MenuScreen implements Screen {
     private GlyphLayout layout;
     private MenuInputHandler inputHandler;
 
+    private Texture backgroundTexture;
+
     private Rectangle playButton;
     private Rectangle exitButton;
 
@@ -46,6 +48,8 @@ public class MenuScreen implements Screen {
         viewport = new FitViewport(Constants.WIDTH, Constants.HEIGHT, camera);
         layout = new GlyphLayout();
         inputHandler = new MenuInputHandler();
+
+        backgroundTexture = new Texture(Gdx.files.internal("textures/background/sky.png"));
 
         float buttonWidth = 120;
         float buttonHeight = 40;
@@ -107,6 +111,11 @@ public class MenuScreen implements Screen {
         batch.setProjectionMatrix(camera.combined);
         shapeRenderer.setProjectionMatrix(camera.combined);
 
+        // Draw background FIRST
+        batch.begin();
+        batch.draw(backgroundTexture, 0, 0, Constants.WIDTH, Constants.HEIGHT);
+        batch.end();
+
         // Draw button backgrounds
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
 
@@ -128,7 +137,7 @@ public class MenuScreen implements Screen {
 
         shapeRenderer.end();
 
-        // Draw text
+        // FINALLY draw text on top
         batch.begin();
 
         // Title and subtitle
@@ -162,7 +171,6 @@ public class MenuScreen implements Screen {
         buttonFont.draw(batch, exitText, exitTextX, exitTextY);
 
         batch.end();
-
     }
 
     @Override
