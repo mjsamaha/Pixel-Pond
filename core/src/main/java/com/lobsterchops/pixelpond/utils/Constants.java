@@ -9,8 +9,8 @@ public class Constants {
     public static final String TITLE = "Pixel Pond";
 
     // World
-    public static final float WORLD_WIDTH = 800f;
-    public static final float WORLD_HEIGHT = 600f;
+    public static final float WORLD_WIDTH = 1600F;
+    public static final float WORLD_HEIGHT = 1200F;
 
     // Player
     public static final float PLAYER_BASE_SIZE = 16f;

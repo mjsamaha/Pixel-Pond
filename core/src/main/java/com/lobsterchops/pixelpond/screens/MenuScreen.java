@@ -137,7 +137,6 @@ public class MenuScreen implements Screen {
 
         shapeRenderer.end();
 
-        // FINALLY draw text on top
         batch.begin();
 
         // Title and subtitle

@@ -6,6 +6,6 @@ public enum FishType {
     MEDIUM_PREY,
     SMALL_PREDATOR,
     LARGE_PREDATOR,
-    NEUTRAL // Fixed typo: fish that ignore player
+    NEUTRAL
 }
 
